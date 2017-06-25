@@ -1,0 +1,142 @@
+/**
+ * Created by zhaoce on 16/12/23.
+ */
+$(window).load(function() {
+    $("#loading").animate({
+        width:"100%",
+        height:"100%",
+        opacity:1,
+        left:"0px",
+        top:"0px"
+//            width:0,
+//            height:"100px",
+//            opacity:0.3
+    },1500,function(){
+        $("#loading").fadeOut(1000);
+        $("#wrap").css("display","block")
+        $("body").css("background","")
+    })
+})
+setTimeout(function(){
+    $("#loading-center-absolute").show();
+
+},500);
+
+$("#nav_bar>i").on("click",function(){
+    $("#navigation_bar").animate({
+        left:"0px"
+    },500,function(){
+        $("#nav_bar>i").css({
+            transform:"rotateZ(180deg)"
+        })
+    })
+})
+$("#nav_bar>i").on("click",function(){
+    //  console.log($("#navigation_bar").position().left);
+    if($("#navigation_bar").position().left == 0){
+        $("#navigation_bar").animate({
+            left:"-200px"
+        },500,function(){
+            $("#nav_bar>i").css({
+                transform:"rotateZ(90deg)"
+            })
+        })
+    }
+})
+$("#About_small").on("click",function(){
+//        alert("haha")
+    $("#introduce1").animate({
+        top:"0px",
+        opacity:"0.2"
+    },500,function(){
+        $("#introduce1").hide();
+        $("#introduce2").show().animate({
+            top:"0px",
+            opacity:"1"
+        })
+    })
+})
+$("#About_big").on("click",function(){
+    $("#introduce2").animate({
+        top:"-200px",
+        opacity:"0.2"
+    },500,function(){
+        $("#introduce2").hide();
+        $("#introduce1").show().animate({
+            top:"200px",
+            opacity:"1"
+        })
+    })
+})
+
+// 我们的服务
+$("#Service-box-div1").on("click",function(){
+    $("#graphic").animate({
+        left:"-1000px",
+        opacity:"0.2"
+    },1000,function(){
+        $("#graphic").show().animate({
+            left:"0px",
+            opacity:"1"
+        },500,function(){});
+
+    })
+    $("#website").animate({
+        right:"1000px",
+        opacity:"0"
+    },1000,function(){
+        $("#website").hide();
+    });
+    $("#cellphone").animate({
+        right:"1000px",
+        opacity:"0"
+    },1000,function(){
+        $("#cellphone").hide();
+    });
+})
+$("#Service-box-div2").on("click",function(){
+    $("#website").animate({
+        left:"-1000px",
+        opacity:"0.2"
+    },1000,function(){
+        $("#website").show().animate({
+            left:"0px",
+            opacity:"1"
+        });
+    })
+    $("#graphic").animate({
+        right:"1000px",
+        opacity:"0"
+    },1000,function(){
+        $("#graphic").hide();
+    });
+    $("#cellphone").animate({
+        right:"1000px",
+        opacity:"0"
+    },1000,function(){
+        $("#cellphone").hide();
+    });
+})
+$("#Service-box-div3").on("click",function(){
+    $("#cellphone").animate({
+        left:"-1000px",
+        opacity:"0.2"
+    },1000,function(){
+        $("#cellphone").show().animate({
+            left:"0px",
+            opacity:"1"
+        });
+    })
+    $("#graphic").animate({
+        right:"1000px",
+        opacity:"0"
+    },1000,function(){
+        $("#graphic").hide();
+    });
+    $("#website").animate({
+        right:"1000px",
+        opacity:"0"
+    },1000,function(){
+        $("#website").hide();
+    });
+})
